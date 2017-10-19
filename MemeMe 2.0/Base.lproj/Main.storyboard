@@ -29,7 +29,7 @@
         <!--Sent Memes-->
         <scene sceneID="MZ5-wi-dZf">
             <objects>
-                <tableViewController id="F4Z-JD-5Rn" sceneMemberID="viewController">
+                <tableViewController id="F4Z-JD-5Rn" customClass="SentMemesTableViewController" customModule="MemeMe_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NL4-qM-m79">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,7 +92,7 @@
         <!--Sent Memes-->
         <scene sceneID="mey-rL-8ag">
             <objects>
-                <collectionViewController id="VxK-f3-bhS" sceneMemberID="viewController">
+                <collectionViewController id="VxK-f3-bhS" customClass="SentMemesCollectionViewController" customModule="MemeMe_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TMg-Fi-Z6w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
