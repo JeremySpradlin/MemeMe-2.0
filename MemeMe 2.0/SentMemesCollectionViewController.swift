@@ -11,4 +11,12 @@ import UIKit
 
 class SentMemesCollectionViewController: UICollectionViewController {
     
+    var memes: [Meme]!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        memes = appDelegate.memes
+    }
+    
 }
