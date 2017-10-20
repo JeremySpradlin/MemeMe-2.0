@@ -112,6 +112,7 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
         bottomTextField.text = "BOTTOM"
         imagePickerView.image = nil
         shareButton.isEnabled = false
+        dismiss(animated: true, completion: nil)
     }
     
     //MARK:  Function for Action buttons

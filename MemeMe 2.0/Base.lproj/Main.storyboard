@@ -54,7 +54,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="p0U-K0-BaA"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nWo-S6-Rdj">
                             <connections>
-                                <action selector="addMemeFunction:" destination="F4Z-JD-5Rn" id="J11-fe-QNx"/>
+                                <action selector="addMemeButton:" destination="F4Z-JD-5Rn" id="J11-fe-QNx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -223,7 +223,14 @@
                             <outlet property="delegate" destination="VxK-f3-bhS" id="USt-sN-hFL"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Sent Memes" id="HUA-e4-KCy"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="HUA-e4-KCy">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="4cg-Zz-oSD"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="06o-Kh-aoh">
+                            <connections>
+                                <action selector="addMemeButton:" destination="VxK-f3-bhS" id="hz7-4P-6w5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWq-Gx-Cv6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -37,7 +37,7 @@ class SentMemesTableViewController: UITableViewController {
         return cell
     }
     
-    @IBAction func addMemeFunction(_ sender: Any) {
+    @IBAction func addMemeButton(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemeEditorView") as! MemeEditorViewController
         present(vc, animated: true, completion: nil)
     }

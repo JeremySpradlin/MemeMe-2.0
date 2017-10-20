@@ -19,4 +19,11 @@ class SentMemesCollectionViewController: UICollectionViewController {
         memes = appDelegate.memes
     }
     
+    @IBOutlet weak var addMemeButton: UIBarButtonItem!
+    
+    @IBAction func addMemeButton(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemeEditorView") as! MemeEditorViewController
+        present(vc, animated: true, completion: nil)
+    }
+    
 }
