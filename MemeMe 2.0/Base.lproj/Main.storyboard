@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7TS-hq-5yZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GZX-QZ-6vH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -50,7 +50,17 @@
                             <outlet property="delegate" destination="F4Z-JD-5Rn" id="0OB-da-0Fm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Sent Memes" id="HzZ-ba-kHL"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="HzZ-ba-kHL">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="p0U-K0-BaA"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nWo-S6-Rdj">
+                            <connections>
+                                <action selector="addMemeFunction:" destination="F4Z-JD-5Rn" id="J11-fe-QNx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addMemeButton" destination="nWo-S6-Rdj" id="ed0-eS-AVf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5qV-76-tq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,8 +69,8 @@
         <!--MemeEditorView-->
         <scene sceneID="BA3-xC-asy">
             <objects>
-                <viewController title="MemeEditorView" id="7TS-hq-5yZ" customClass="MemeEditorViewController" customModule="MemeMe_2_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wd1-GJ-OC4">
+                <viewController storyboardIdentifier="MemeEditorView" title="MemeEditorView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7TS-hq-5yZ" customClass="MemeEditorViewController" customModule="MemeMe_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wd1-GJ-OC4" userLabel="MemeEditorView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

@@ -11,6 +11,9 @@ import UIKit
 
 class SentMemesTableViewController: UITableViewController {
     
+    @IBOutlet weak var addMemeButton: UIBarButtonItem!
+    
+    
     var memes: [Meme]!
     
     override func viewDidLoad() {
@@ -19,15 +22,25 @@ class SentMemesTableViewController: UITableViewController {
         memes = appDelegate.memes
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(self.memes.count)
         return self.memes.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "memeCell")!
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
+        cell.textLabel?.text = meme.topTextField
+        cell.imageView?.image = meme.memedImage
         
+        return cell
     }
+    
+    @IBAction func addMemeFunction(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemeEditorView") as! MemeEditorViewController
+        present(vc, animated: true, completion: nil)
+    }
+    
     
 }
