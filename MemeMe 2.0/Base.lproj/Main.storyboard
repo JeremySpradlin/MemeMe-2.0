@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,7 +51,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sent Memes" id="HzZ-ba-kHL">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="p0U-K0-BaA"/>
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="p0U-K0-BaA">
+                            <connections>
+                                <action selector="editButton:" destination="F4Z-JD-5Rn" id="t8b-0w-ORZ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nWo-S6-Rdj">
                             <connections>
                                 <action selector="addMemeButton:" destination="F4Z-JD-5Rn" id="J11-fe-QNx"/>
