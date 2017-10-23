@@ -14,30 +14,22 @@ class SentMemesTableViewController: UITableViewController {
     @IBOutlet weak var addMemeButton: UIBarButtonItem!
     
     
-    var memes: [Meme]!
+//    var memes: [Meme]!
+//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//    memes = appDelegate.memes
+    var memes: [Meme] { return (UIApplication.shared.delegate as! AppDelegate).memes }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        memes = appDelegate.memes
-        tableView.reloadData()
+
+        
     }
     
+    //var memes: [Meme] { return (UIApplication.shared.delegate as! AppDelegate).memes }
+
+    
     override func viewWillAppear(_ animated: Bool) {
-//        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//            print(self.memes.count)
-//            return self.memes.count
-//        }
-//
-//        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "memeCell")!
-//            let meme = self.memes[(indexPath as NSIndexPath).row]
-//
-//            cell.textLabel?.text = meme.topTextField
-//            cell.imageView?.image = meme.memedImage
-//
-//            return cell
-//        }
         print("Inside View Will Appear")
         tableView.reloadData()
         print(self.memes.count)
