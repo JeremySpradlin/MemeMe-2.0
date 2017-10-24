@@ -20,9 +20,7 @@ class SentMemesTableViewController: UITableViewController {
     
     //MARK: Override Functions
     override func viewWillAppear(_ animated: Bool) {
-        print("Inside View Will Appear")
         tableView.reloadData()
-        print(self.memes.count)
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.memes.count

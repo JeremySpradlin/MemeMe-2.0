@@ -166,6 +166,59 @@
             </objects>
             <point key="canvasLocation" x="984" y="-439"/>
         </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="srt-cq-jSr">
+            <objects>
+                <viewController storyboardIdentifier="MemeDetailView" id="OIO-Sl-tp3" customClass="MemeDetailViewController" customModule="MemeMe_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="quZ-wI-pw8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ugp-9N-5ou">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="CN4-aS-uf4">
+                                        <connections>
+                                            <action selector="activityButton:" destination="OIO-Sl-tp3" id="fj5-Eg-9Lz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="gMG-n0-4EM"/>
+                                    <barButtonItem style="plain" id="9Bt-gu-UU2">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jkD-YX-XVb">
+                                            <rect key="frame" x="311" y="7" width="48" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Cancel"/>
+                                            <connections>
+                                                <action selector="cancelButton:" destination="OIO-Sl-tp3" eventType="touchUpInside" id="xLP-AX-Neg"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ayw-TW-sUm">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ayw-TW-sUm" firstAttribute="top" secondItem="Ugp-9N-5ou" secondAttribute="bottom" id="IKd-oK-DxM"/>
+                            <constraint firstItem="OKu-7j-uJx" firstAttribute="trailing" secondItem="ayw-TW-sUm" secondAttribute="trailing" id="Oyc-xL-PEe"/>
+                            <constraint firstItem="ayw-TW-sUm" firstAttribute="leading" secondItem="OKu-7j-uJx" secondAttribute="leading" id="QuS-i0-Gbp"/>
+                            <constraint firstItem="Ugp-9N-5ou" firstAttribute="trailing" secondItem="OKu-7j-uJx" secondAttribute="trailing" id="RJj-De-c3E"/>
+                            <constraint firstItem="OKu-7j-uJx" firstAttribute="bottom" secondItem="ayw-TW-sUm" secondAttribute="bottom" id="bVw-DK-ALY"/>
+                            <constraint firstItem="Ugp-9N-5ou" firstAttribute="top" secondItem="quZ-wI-pw8" secondAttribute="top" id="cJI-z1-30u"/>
+                            <constraint firstItem="Ugp-9N-5ou" firstAttribute="leading" secondItem="OKu-7j-uJx" secondAttribute="leading" id="l3g-VE-hUH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OKu-7j-uJx"/>
+                    </view>
+                    <connections>
+                        <outlet property="memeDetailImageView" destination="ayw-TW-sUm" id="Ipw-ST-aHy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P1U-ID-AH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1827" y="-437"/>
+        </scene>
         <!--TableView-->
         <scene sceneID="HUr-uX-DXX">
             <objects>
@@ -209,21 +262,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="btK-Gw-hLV">
-                            <size key="itemSize" width="120" height="108"/>
+                            <size key="itemSize" width="166" height="123"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="memeCell" id="20Z-0i-OQP" customClass="SentMemesCollectionViewCell" customModule="MemeMe_2_0" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="120" height="108"/>
+                                <rect key="frame" x="0.0" y="0.0" width="166" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="120" height="108"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="166" height="123"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8NM-DS-y2n">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="108"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8NM-DS-y2n">
+                                            <rect key="frame" x="6" y="-5" width="160" height="133"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>

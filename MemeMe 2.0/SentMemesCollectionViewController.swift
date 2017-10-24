@@ -20,7 +20,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
     //MARK: Override Functions
     override func viewWillAppear(_ animated: Bool) {
         collectionView?.reloadData()
-        print(self.memes.count)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +39,12 @@ class SentMemesCollectionViewController: UICollectionViewController {
         let meme = self.memes[(indexPath as NSIndexPath).row]
         cell?.memeCollectionCell.image = meme.memedImage
         return cell!
+    }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemeDetailView") as! MemeDetailViewController
+        let meme = self.memes[(indexPath as NSIndexPath).row]
+        vc.image = meme.memedImage
+        present(vc, animated: true, completion: nil)
     }
     
     //MARK: Action Functions
