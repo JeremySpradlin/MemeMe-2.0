@@ -11,6 +11,7 @@ import UIKit
 
 class MemeTextAtrributes: UIViewController {
     
+    //MARK: Text Attribtes for meme text fields
     let memeTextAttributes:[String:Any] = [
         NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
         NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,

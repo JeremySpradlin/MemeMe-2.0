@@ -8,6 +8,7 @@
 
 import UIKit
 
+//MARK: Meme Struct
 struct Meme {
     var topTextField: String!
     var bottomTextField: String!

@@ -160,7 +160,6 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
     func configureNavToolbars (isHidden: Bool) {
         topToolbar.isHidden = isHidden
         bottomToolbar.isHidden = isHidden
-        //self.navigationController?.navigationBar.isHidden = isHidden
     }
     
     

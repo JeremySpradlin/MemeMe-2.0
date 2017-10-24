@@ -10,6 +10,7 @@ import UIKit
 
 class SentMemesCollectionViewCell: UICollectionViewCell {
     
+    //MARK: Outlet Declarations
     @IBOutlet weak var memeCollectionCell: UIImageView!
     
 }

@@ -11,16 +11,16 @@ import UIKit
 
 class MemeTextFieldDelegate: NSObject, UITextFieldDelegate {
     
+    //MARK: Variable Declarations
     let top = "TOP"
     let bottom = "BOTTOM"
     var originalText = ""
     
-    //Functions for text field delegate
+    //MARK: Text Field Delegate functions
     func textFieldDidBeginEditing(_ textField: UITextField) {
         originalText = textField.text!
         if originalText == top || originalText == bottom {
             textField.text = ""
-            
         }
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
