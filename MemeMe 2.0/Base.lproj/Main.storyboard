@@ -153,11 +153,13 @@
                     <connections>
                         <outlet property="albumButton" destination="PMG-DH-j73" id="AHb-lG-6Wm"/>
                         <outlet property="bottomTextField" destination="AlC-rh-2cR" id="Wb6-em-dXG"/>
+                        <outlet property="bottomToolbar" destination="4OR-vP-TyS" id="YPs-uz-fmx"/>
                         <outlet property="cameraButton" destination="dkJ-Qj-rFM" id="sLE-dx-6h3"/>
                         <outlet property="cancelButton" destination="E56-f0-BRQ" id="EZa-3b-UbM"/>
                         <outlet property="imagePickerView" destination="NTF-F0-pRm" id="3gx-yI-pW3"/>
                         <outlet property="shareButton" destination="T71-p7-IXO" id="pg2-rD-F7u"/>
                         <outlet property="topTextField" destination="4It-1v-Pmj" id="tES-ma-Mbp"/>
+                        <outlet property="topToolbar" destination="jh3-ve-xkJ" id="ETz-pL-ggK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gzy-kW-Ry9" userLabel="First Responder" sceneMemberID="firstResponder"/>

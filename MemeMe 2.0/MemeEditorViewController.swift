@@ -22,6 +22,9 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var topToolbar: UIToolbar!
+    @IBOutlet weak var bottomToolbar: UIToolbar!
+    
     //Constant Declarations
     let textFieldDelegate = MemeTextFieldDelegate()
     let topText = "TOP"
@@ -134,10 +137,12 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
     
     //MARK: Generate the meme image function
     func generateMemedImage() -> UIImage {
+        configureNavToolbars(isHidden: true)
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
+        configureNavToolbars(isHidden: false)
         return memedImage
     }
     
@@ -151,6 +156,13 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
         textField.text = text
     }
     
+    //MARK: Configure the navigation tool bars for creating the meme image.
+    func configureNavToolbars (isHidden: Bool) {
+        topToolbar.isHidden = isHidden
+        bottomToolbar.isHidden = isHidden
+        //self.navigationController?.navigationBar.isHidden = isHidden
+    }
+    
     
     //MARK: Save function for saving the meme
     func save() {
@@ -158,7 +170,6 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
         
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
-        print("appending the meme array")
         appDelegate.memes.append(meme)
     }
 }
