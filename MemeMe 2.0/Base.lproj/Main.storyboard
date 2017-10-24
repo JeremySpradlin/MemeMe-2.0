@@ -226,6 +226,9 @@
                                         </imageView>
                                     </subviews>
                                 </view>
+                                <connections>
+                                    <outlet property="memeCollectionCell" destination="8NM-DS-y2n" id="VKm-td-Tfg"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
