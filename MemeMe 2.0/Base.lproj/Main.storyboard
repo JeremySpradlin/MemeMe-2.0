@@ -246,6 +246,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="flowLayout" destination="btK-Gw-hLV" id="1BC-5X-wYG"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWq-Gx-Cv6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

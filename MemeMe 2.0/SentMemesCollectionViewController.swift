@@ -15,11 +15,22 @@ class SentMemesCollectionViewController: UICollectionViewController {
 
     //MARK:  Outlet Declarations
     @IBOutlet weak var addMemeButton: UIBarButtonItem!
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     //MARK: Override Functions
     override func viewWillAppear(_ animated: Bool) {
         collectionView?.reloadData()
         print(self.memes.count)
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let space: CGFloat = 3.0
+        let widthDimension = (view.frame.size.width - (2 * space)) / 4.0
+        let heightDimension = (view.frame.size.height - (2 * space)) / 4.0
+        
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: widthDimension, height: heightDimension)
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
