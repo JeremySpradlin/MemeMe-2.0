@@ -44,7 +44,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemeDetailView") as! MemeDetailViewController
         let meme = self.memes[(indexPath as NSIndexPath).row]
         vc.image = meme.memedImage
-        present(vc, animated: true, completion: nil)
+        self.navigationController!.pushViewController(vc, animated: true)
     }
     
     //MARK: Action Functions

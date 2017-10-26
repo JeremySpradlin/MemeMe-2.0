@@ -20,9 +20,7 @@ class MemeDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         memeDetailImageView.image = image
     }
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+
     
     //MARK: Action Functions
     @IBAction func cancelButton(_ sender: Any) {
