@@ -46,6 +46,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
         vc.image = meme.memedImage
         self.navigationController!.pushViewController(vc, animated: true)
     }
+
     
     //MARK: Action Functions
     @IBAction func addMemeButton(_ sender: Any) {

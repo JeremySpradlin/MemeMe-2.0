@@ -20,20 +20,4 @@ class MemeDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         memeDetailImageView.image = image
     }
-
-    
-    //MARK: Action Functions
-    @IBAction func cancelButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    @IBAction func activityButton(_ sender: Any) {
-        let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        activityController.completionWithItemsHandler = { activity, success, items, error in
-            if success {
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
-        present(activityController, animated: true, completion: nil)
-    }
-    
 }
