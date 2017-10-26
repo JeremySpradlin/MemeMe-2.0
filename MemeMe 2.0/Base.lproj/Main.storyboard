@@ -51,11 +51,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sent Memes" id="HzZ-ba-kHL">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="p0U-K0-BaA">
-                            <connections>
-                                <action selector="editButton:" destination="F4Z-JD-5Rn" id="t8b-0w-ORZ"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nWo-S6-Rdj">
                             <connections>
                                 <action selector="addMemeButton:" destination="F4Z-JD-5Rn" id="J11-fe-QNx"/>
@@ -273,7 +268,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Sent Memes" id="HUA-e4-KCy">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="4cg-Zz-oSD"/>
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="4cg-Zz-oSD">
+                            <connections>
+                                <action selector="editButton:" destination="VxK-f3-bhS" id="1Ra-Fp-LPX"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="06o-Kh-aoh">
                             <connections>
                                 <action selector="addMemeButton:" destination="VxK-f3-bhS" id="hz7-4P-6w5"/>
