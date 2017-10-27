@@ -54,6 +54,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
         present(vc, animated: true, completion: nil)
     }
     @IBAction func editButton(_ sender: Any) {
+        
     }
     
 }

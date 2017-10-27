@@ -25,19 +25,20 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
     @IBOutlet weak var topToolbar: UIToolbar!
     @IBOutlet weak var bottomToolbar: UIToolbar!
     
+    
+    
     //Constant Declarations
     let textFieldDelegate = MemeTextFieldDelegate()
     let topText = "TOP"
     let bottomText = "BOTTOM"
     
     
+    
     //MARK:  Override functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureTextFields(textField: topTextField, text: topText)
         configureTextFields(textField: bottomTextField, text: bottomText)
-        
         imagePickerView.contentMode = .scaleAspectFit
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -96,7 +97,7 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
         pickAnImage(ofType: .camera)
     }
-    //Functinon for when activity button is selected, calling the activityViewController
+    //Functionn for when activity button is selected, calling the activityViewController
     @IBAction func activityButton(_ sender: Any) {
         let meme = generateMemedImage()
         let activityController = UIActivityViewController(activityItems: [meme], applicationActivities: nil)
@@ -118,6 +119,8 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
         dismiss(animated: true, completion: nil)
     }
     
+    
+    
     //MARK:  Function for Action buttons
     func pickAnImage(ofType type: UIImagePickerControllerSourceType!) {
         let imagePickerController = UIImagePickerController()
@@ -126,6 +129,8 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
         present(imagePickerController, animated: true, completion: nil)
     }
     
+    
+    
     //MARK: Delegate functions
     //Function for Image Picker delegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
@@ -133,6 +138,7 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
         imagePickerView.image = image
         dismiss(animated: true, completion: nil)
     }
+    
     
     
     //MARK: Generate the meme image function
@@ -146,6 +152,8 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
         return memedImage
     }
     
+    
+    
     //Mark:  Configuring text fields function
     func configureTextFields(textField: UITextField, text: String!){
         textField.defaultTextAttributes = memeTextAttributes
@@ -156,6 +164,8 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
         textField.text = text
     }
     
+    
+    
     //MARK: Configure the navigation tool bars for creating the meme image.
     func configureNavToolbars (isHidden: Bool) {
         topToolbar.isHidden = isHidden
@@ -163,10 +173,10 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
     }
     
     
+    
     //MARK: Save function for saving the meme
     func save() {
         let meme = Meme(topTextField: topTextField.text!, bottomTextField: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
-        
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
