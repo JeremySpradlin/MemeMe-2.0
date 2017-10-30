@@ -43,6 +43,13 @@ class SentMemesTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemeDetailView") as! MemeDetailViewController
+        let meme = self.memes[(indexPath as NSIndexPath).row]
+        vc.image = meme.memedImage
+        self.navigationController!.pushViewController(vc, animated: true)
+    }
+    
     
     //MARK: Action Functions
     @IBAction func addMemeButton(_ sender: Any) {

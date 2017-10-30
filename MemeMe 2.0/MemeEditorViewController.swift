@@ -31,6 +31,7 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
     let textFieldDelegate = MemeTextFieldDelegate()
     let topText = "TOP"
     let bottomText = "BOTTOM"
+
     
     
     
@@ -126,6 +127,7 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = type
+        imagePickerController.allowsEditing = true
         present(imagePickerController, animated: true, completion: nil)
     }
     
@@ -180,5 +182,8 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
+    }
+    static func setFont (font: String) {
+        print(font)
     }
 }

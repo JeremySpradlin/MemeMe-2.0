@@ -12,8 +12,8 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
     //MARK: Variable Declarations
     var memes: [Meme] { return (UIApplication.shared.delegate as! AppDelegate).memes }
-
     //MARK:  Outlet Declarations
+    @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var addMemeButton: UIBarButtonItem!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
@@ -36,6 +36,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "memeCell", for: indexPath) as? SentMemesCollectionViewCell
+        cell?.deleteButton.tag = indexPath.row
         let meme = self.memes[(indexPath as NSIndexPath).row]
         cell?.memeCollectionCell.image = meme.memedImage
         return cell!
@@ -57,4 +58,5 @@ class SentMemesCollectionViewController: UICollectionViewController {
         
     }
     
+
 }
