@@ -15,6 +15,8 @@ class SentMemesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var deleteButtonView: UIVisualEffectView!
     @IBOutlet weak var deleteButton: UIButton!
     
+
+    
     
     //Failed attempt at beautifying the button / WIP
     //Not getting called, figure out how to call
@@ -25,18 +27,7 @@ class SentMemesCollectionViewCell: UICollectionViewCell {
             deleteButtonView.layer.masksToBounds = true
         }
     }
-    
-    
-    //Working on delete button action = May need to move?
-    @IBAction func deleteButtonTapped(_ sender: Any) {
-        let object = UIApplication.shared.delegate
-        let appDelegate = object as! AppDelegate
-        print(deleteButton.tag)
-        //appDelegate.memes.remove(at: deleteButton.tag)  //Uncomment to delete object, will currently cause crash
-        //SentMemesCollectionViewController.collectionView.reloadData()
-        //Need to figure out how to reload the collection view to remove the meme from teh collection view after removing it
-        //from the data object
-    }
-
-    
 }
+
+
+

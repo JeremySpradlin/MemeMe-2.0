@@ -164,6 +164,7 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
         textField.backgroundColor = UIColor.clear
         textField.delegate = textFieldDelegate
         textField.text = text
+
     }
     
     
@@ -184,6 +185,7 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
         appDelegate.memes.append(meme)
     }
     static func setFont (font: String) {
+    
         print(font)
     }
 }

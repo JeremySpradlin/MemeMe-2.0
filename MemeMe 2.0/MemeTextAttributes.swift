@@ -12,7 +12,7 @@ import UIKit
 class MemeTextAtrributes: UIViewController {
     
     //MARK: Variable declarations
-    
+    //
     //MARK: Text Attribtes for meme text fields
     let memeTextAttributes:[String:Any] = [
         NSAttributedStringKey.strokeColor.rawValue: UIColor.black,

@@ -37,6 +37,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "memeCell", for: indexPath) as? SentMemesCollectionViewCell
         cell?.deleteButton.tag = indexPath.row
+        cell.delegate = self
         let meme = self.memes[(indexPath as NSIndexPath).row]
         cell?.memeCollectionCell.image = meme.memedImage
         return cell!
