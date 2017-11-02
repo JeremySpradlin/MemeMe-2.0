@@ -298,7 +298,7 @@
                                                         </constraints>
                                                         <state key="normal" image="close-button-png-27"/>
                                                         <connections>
-                                                            <action selector="deleteButtonTapped:" destination="20Z-0i-OQP" eventType="touchUpInside" id="rfx-tg-aGg"/>
+                                                            <action selector="deleteButton:" destination="20Z-0i-OQP" eventType="touchUpInside" id="M7x-T3-Xks"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

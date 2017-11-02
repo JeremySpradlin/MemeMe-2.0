@@ -37,7 +37,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "memeCell", for: indexPath) as? SentMemesCollectionViewCell
         cell?.deleteButton.tag = indexPath.row
-        cell.delegate = self
+        //cell?.delegate = self
         let meme = self.memes[(indexPath as NSIndexPath).row]
         cell?.memeCollectionCell.image = meme.memedImage
         return cell!
@@ -56,8 +56,18 @@ class SentMemesCollectionViewController: UICollectionViewController {
         present(vc, animated: true, completion: nil)
     }
     @IBAction func editButton(_ sender: Any) {
+        // TODO: Add code to make memes selectable, change edit button to delete button, and then delete selected memes when pressed
         
     }
     
-
+    //Leftover code from creating cell delegate
+//    func deleteCell(index: Int) {
+//        let object = UIApplication.shared.delegate
+//        let appDelegate = object as! AppDelegate
+//        print(index)
+//        appDelegate.memes.remove(at: index)
+//        collectionView?.deleteItems(at: index)
+//        collectionView?.reloadData()
+//    }
+    
 }
