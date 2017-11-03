@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SentMemesCollectionViewController: UICollectionViewController {
+class SentMemesCollectionViewController: UICollectionViewController, SentMemesCollectionViewCellDelegate {
     
     //MARK: Variable Declarations
     var memes: [Meme] { return (UIApplication.shared.delegate as! AppDelegate).memes }
@@ -16,6 +16,8 @@ class SentMemesCollectionViewController: UICollectionViewController {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var addMemeButton: UIBarButtonItem!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
+    var isEditable: Bool?
     
     //MARK: Override Functions
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +39,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "memeCell", for: indexPath) as? SentMemesCollectionViewCell
         cell?.deleteButton.tag = indexPath.row
-        //cell?.delegate = self
+        cell?.delegate = self
         let meme = self.memes[(indexPath as NSIndexPath).row]
         cell?.memeCollectionCell.image = meme.memedImage
         return cell!
@@ -60,14 +62,15 @@ class SentMemesCollectionViewController: UICollectionViewController {
         
     }
     
-    //Leftover code from creating cell delegate
-//    func deleteCell(index: Int) {
-//        let object = UIApplication.shared.delegate
-//        let appDelegate = object as! AppDelegate
-//        print(index)
-//        appDelegate.memes.remove(at: index)
-//        collectionView?.deleteItems(at: index)
-//        collectionView?.reloadData()
-//    }
+    func deleteCell(index: Int) {
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        //appDelegate.memes.remove(at: indexPath.row)
+        appDelegate.memes.remove(at: index)
+        //tableView.deleteRows(at: [indexPath], with: .fade)
+        print("deleteCell() called")
+        print(index)
+        collectionView?.reloadData()
+    }
     
 }
