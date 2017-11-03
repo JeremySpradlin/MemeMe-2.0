@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GZX-QZ-6vH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GZX-QZ-6vH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -285,7 +285,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="132" height="124"/>
                                         </imageView>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0XQ-Ss-Zio">
-                                            <rect key="frame" x="5" y="13" width="20" height="20"/>
+                                            <rect key="frame" x="-3" y="1" width="20" height="20"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="l9n-Ag-kou">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,7 +336,7 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="HUA-e4-KCy">
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="4cg-Zz-oSD">
                             <connections>
-                                <action selector="editButton:" destination="VxK-f3-bhS" id="1Ra-Fp-LPX"/>
+                                <action selector="editButtonTapped:" destination="VxK-f3-bhS" id="1Ra-Fp-LPX"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="06o-Kh-aoh">
@@ -346,6 +346,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="4cg-Zz-oSD" id="ef1-2P-gTW"/>
                         <outlet property="flowLayout" destination="btK-Gw-hLV" id="1BC-5X-wYG"/>
                     </connections>
                 </collectionViewController>

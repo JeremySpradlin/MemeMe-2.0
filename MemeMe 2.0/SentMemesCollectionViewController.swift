@@ -12,12 +12,13 @@ class SentMemesCollectionViewController: UICollectionViewController, SentMemesCo
     
     //MARK: Variable Declarations
     var memes: [Meme] { return (UIApplication.shared.delegate as! AppDelegate).memes }
+    var isEditable: Bool?
+
     //MARK:  Outlet Declarations
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var addMemeButton: UIBarButtonItem!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
-    
-    var isEditable: Bool?
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
     //MARK: Override Functions
     override func viewWillAppear(_ animated: Bool) {
@@ -25,6 +26,9 @@ class SentMemesCollectionViewController: UICollectionViewController, SentMemesCo
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        isEditable = false
+        
         let space: CGFloat = 3.0
         let widthDimension = (view.frame.size.width - (2 * space)) / 4.0
         let heightDimension = (view.frame.size.height - (2 * space)) / 4.0
@@ -42,6 +46,11 @@ class SentMemesCollectionViewController: UICollectionViewController, SentMemesCo
         cell?.delegate = self
         let meme = self.memes[(indexPath as NSIndexPath).row]
         cell?.memeCollectionCell.image = meme.memedImage
+        if isEditable == false {
+            cell?.deleteButtonView.isHidden = true
+        } else {
+            cell?.deleteButtonView.isHidden = false
+        }
         return cell!
     }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -57,17 +66,25 @@ class SentMemesCollectionViewController: UICollectionViewController, SentMemesCo
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemeEditorView") as! MemeEditorViewController
         present(vc, animated: true, completion: nil)
     }
-    @IBAction func editButton(_ sender: Any) {
-        // TODO: Add code to make memes selectable, change edit button to delete button, and then delete selected memes when pressed
-        
+    @IBAction func editButtonTapped(_ sender: Any) {
+        if isEditable == false {
+            editButton.title = "Done"
+            isEditable = true
+            print("isEditable is True")
+        } else {
+            editButton.title = "Edit"
+            isEditable = false
+            print("isEditable is False")
+        }
+        collectionView?.reloadData()
     }
     
+    
+    //Delegate function for the delete cell button
     func deleteCell(index: Int) {
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
-        //appDelegate.memes.remove(at: indexPath.row)
         appDelegate.memes.remove(at: index)
-        //tableView.deleteRows(at: [indexPath], with: .fade)
         print("deleteCell() called")
         print(index)
         collectionView?.reloadData()
