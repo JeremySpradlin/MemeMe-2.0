@@ -9,10 +9,15 @@
 import Foundation
 import UIKit
 
+protocol FontTableViewDelegate: class {
+    func setFont(font: String)
+}
+
 class FontTableViewController: UITableViewController {
     
     //MARK: Variable Declarations
     let fonts = ["Test 1", "Test 2", "AmericanTypewriter"]
+    weak var delegate: FontTableViewDelegate?
     
     //MARK: Tableview functions
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,7 +30,7 @@ class FontTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let newFont = fonts[indexPath.row]
-        MemeEditorViewController.setFont(font: newFont)
+        delegate?.setFont(font: newFont)
         self.dismiss(animated: true, completion: nil)
     }
     

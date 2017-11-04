@@ -106,7 +106,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="1NT-Bd-1Fl"/>
                                     <barButtonItem title="Choose Font" id="mtV-oI-Ock">
                                         <connections>
-                                            <segue destination="mHt-Yg-dC5" kind="show" id="KrH-Kj-e1o"/>
+                                            <action selector="chooseFontButton:" destination="7TS-hq-5yZ" id="qaz-9p-Gvt"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="wrM-Oj-ZVI"/>
@@ -199,7 +199,7 @@
         <!--Font Table View Controller-->
         <scene sceneID="gOg-cl-9QD">
             <objects>
-                <tableViewController id="mHt-Yg-dC5" customClass="FontTableViewController" customModule="MemeMe_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FontTableViewController" id="mHt-Yg-dC5" customClass="FontTableViewController" customModule="MemeMe_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CtL-dn-g5A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

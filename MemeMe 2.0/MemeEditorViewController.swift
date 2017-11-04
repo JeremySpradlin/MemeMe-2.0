@@ -11,7 +11,8 @@ import AVFoundation
 import Photos
 
 
-class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+
+class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, FontTableViewDelegate {
     
     //MARK: Variable declaration
     //IBOutlet Declaration
@@ -31,15 +32,15 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
     let textFieldDelegate = MemeTextFieldDelegate()
     let topText = "TOP"
     let bottomText = "BOTTOM"
+    let defaultText = "HelveticaNeue-CondensedBlack"
 
-    
     
     
     //MARK:  Override functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTextFields(textField: topTextField, text: topText)
-        configureTextFields(textField: bottomTextField, text: bottomText)
+        configureTextFields(textField: topTextField, text: topText, font: defaultText)
+        configureTextFields(textField: bottomTextField, text: bottomText, font: defaultText)
         imagePickerView.contentMode = .scaleAspectFit
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -119,6 +120,11 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
         shareButton.isEnabled = false
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func chooseFontButton(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "FontTableViewController") as! FontTableViewController
+        vc.delegate = self
+        present(vc, animated: true, completion: nil)
+    }
     
     
     
@@ -157,14 +163,14 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
     
     
     //Mark:  Configuring text fields function
-    func configureTextFields(textField: UITextField, text: String!){
+    func configureTextFields(textField: UITextField, text: String!, font: String!){
         textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = .center
         textField.borderStyle = UITextBorderStyle.none
         textField.backgroundColor = UIColor.clear
         textField.delegate = textFieldDelegate
         textField.text = text
-
+        textField.font = UIFont(name: font, size: 40)!
     }
     
     
@@ -184,8 +190,9 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
     }
-    static func setFont (font: String) {
-    
+    func setFont (font: String) {
+        configureTextFields(textField: topTextField, text: topTextField.text, font: font)
+        configureTextFields(textField: bottomTextField, text: bottomTextField.text, font: font)
         print(font)
     }
 }
