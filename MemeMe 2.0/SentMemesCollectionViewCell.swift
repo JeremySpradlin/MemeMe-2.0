@@ -17,7 +17,6 @@ class SentMemesCollectionViewCell: UICollectionViewCell {
     //MARK: Outlet Declarations
     @IBOutlet weak var memeCollectionCell: UIImageView! {
         didSet{
-            print("Inside didSet")
             deleteButtonView.layer.cornerRadius = deleteButtonView.bounds.width / 2
             deleteButtonView.layer.masksToBounds = true
         }
@@ -30,7 +29,6 @@ class SentMemesCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func deleteButton(_ sender: Any) {
-        print("Delete Button Pressed")
         delegate?.deleteCell(index: deleteButton.tag)
     }
     
@@ -52,8 +50,6 @@ class SentMemesCollectionViewCell: UICollectionViewCell {
         //Create layer, then add animation to the element's layer
         let layer: CALayer = self.layer
         layer.add(shakeAnim, forKey:"shaking")
-        //shakeEnabled = true
-        
     }
 
 }

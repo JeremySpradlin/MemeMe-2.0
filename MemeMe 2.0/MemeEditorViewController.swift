@@ -75,11 +75,9 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
         if bottomTextField.isFirstResponder {
             view.frame.origin.y -= getKeyboardHeight(notification)
         }
-        print("Inside keyboardWillShow")
     }
     @objc func keyboardWillHide(_ notification:Notification) {
         view.frame.origin.y = 0
-        print("Inside keyboardWillHide")
     }
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
         let userInfo = notification.userInfo
@@ -193,6 +191,5 @@ class MemeEditorViewController: MemeTextAtrributes, UIImagePickerControllerDeleg
     func setFont (font: String) {
         configureTextFields(textField: topTextField, text: topTextField.text, font: font)
         configureTextFields(textField: bottomTextField, text: bottomTextField.text, font: font)
-        print(font)
     }
 }

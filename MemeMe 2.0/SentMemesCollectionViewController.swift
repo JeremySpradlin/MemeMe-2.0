@@ -71,11 +71,9 @@ class SentMemesCollectionViewController: UICollectionViewController, SentMemesCo
         if isEditable == false {
             editButton.title = "Done"
             isEditable = true
-            print("isEditable is True")
         } else {
             editButton.title = "Edit"
             isEditable = false
-            print("isEditable is False")
         }
         collectionView?.reloadData()
     }
@@ -86,8 +84,6 @@ class SentMemesCollectionViewController: UICollectionViewController, SentMemesCo
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.remove(at: index)
-        print("deleteCell() called")
-        print(index)
         collectionView?.reloadData()
     }
     
