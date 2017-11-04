@@ -41,7 +41,7 @@ class SentMemesCollectionViewCell: UICollectionViewCell {
         shakeAnim.repeatCount = 2
         shakeAnim.autoreverses = true
         let startAngle: Float = (-2) * 3.14159/180
-        var stopAngle = -startAngle
+        let stopAngle = -startAngle
         shakeAnim.fromValue = NSNumber(value: startAngle)
         shakeAnim.toValue = NSNumber(value: 3 * stopAngle)
         shakeAnim.autoreverses = true
