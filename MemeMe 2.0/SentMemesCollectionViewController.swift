@@ -14,11 +14,13 @@ class SentMemesCollectionViewController: UICollectionViewController, SentMemesCo
     var memes: [Meme] { return (UIApplication.shared.delegate as! AppDelegate).memes }
     var isEditable: Bool?
 
+    
     //MARK:  Outlet Declarations
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var addMemeButton: UIBarButtonItem!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var editButton: UIBarButtonItem!
+    
     
     //MARK: Override Functions
     override func viewWillAppear(_ animated: Bool) {
@@ -27,7 +29,7 @@ class SentMemesCollectionViewController: UICollectionViewController, SentMemesCo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        isEditable = false
+        isEditable = true //Set to true to handle initial loading of CollectionView
         
         let space: CGFloat = 3.0
         let widthDimension = (view.frame.size.width - (2 * space)) / 4.0
@@ -38,8 +40,19 @@ class SentMemesCollectionViewController: UICollectionViewController, SentMemesCo
         flowLayout.itemSize = CGSize(width: widthDimension, height: heightDimension)
     }
     
+    
+    
+    
+    
+    
     //MARK: CollectionView Functions
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if memes.count == 0 {
+            editButton.isEnabled = false
+            editButtonTapped(self)
+        } else {
+            editButton.isEnabled = true
+        }
         return memes.count
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -66,6 +79,9 @@ class SentMemesCollectionViewController: UICollectionViewController, SentMemesCo
     }
 
     
+    
+    
+    
     //MARK: Action Functions
     //Presents the MemeEditorViewController
     @IBAction func addMemeButton(_ sender: Any) {
@@ -83,6 +99,9 @@ class SentMemesCollectionViewController: UICollectionViewController, SentMemesCo
         }
         collectionView?.reloadData()
     }
+    
+    
+    
     
     
     //Delegate function for the delete cell button
