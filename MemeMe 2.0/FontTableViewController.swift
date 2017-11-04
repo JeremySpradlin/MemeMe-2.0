@@ -16,7 +16,7 @@ protocol FontTableViewDelegate: class {
 class FontTableViewController: UITableViewController {
     
     //MARK: Variable Declarations
-    let fonts = ["Test 1", "Test 2", "AmericanTypewriter"]
+    let fonts = ["HelveticaNeue-CondensedBlack", "AppleColorEmoji", "ArialMT", "AmericanTypewriter", "AvenirNext-Heavy", "AvenirNextCondensed-Bold", "ChalkboardSE-Bold", "Chalkduster", "Copperplate", "Futura-CondensedExtraBold", "Georgia", "Helvetica", "MarkerFelt-Wide", "SnellRoundhand-Black"]
     weak var delegate: FontTableViewDelegate?
     
     //MARK: Tableview functions
