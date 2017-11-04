@@ -37,6 +37,8 @@ class SentMemesCollectionViewController: UICollectionViewController, SentMemesCo
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: widthDimension, height: heightDimension)
     }
+    
+    //MARK: CollectionView Functions
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }
@@ -46,6 +48,8 @@ class SentMemesCollectionViewController: UICollectionViewController, SentMemesCo
         cell?.delegate = self
         let meme = self.memes[(indexPath as NSIndexPath).row]
         cell?.memeCollectionCell.image = meme.memedImage
+        
+        //Checks isEditable status and sets delete button view accordingly and wiggles buttons if isEditable is set to true
         if isEditable == false {
             cell?.deleteButtonView.isHidden = true
         } else {
@@ -63,10 +67,12 @@ class SentMemesCollectionViewController: UICollectionViewController, SentMemesCo
 
     
     //MARK: Action Functions
+    //Presents the MemeEditorViewController
     @IBAction func addMemeButton(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemeEditorView") as! MemeEditorViewController
         present(vc, animated: true, completion: nil)
     }
+    //Checks the current status of isEditable, and changes title to match status
     @IBAction func editButtonTapped(_ sender: Any) {
         if isEditable == false {
             editButton.title = "Done"

@@ -20,7 +20,6 @@ class SentMemesTableViewController: UITableViewController {
     
     //MARK: Override Functions
     override func viewWillAppear(_ animated: Bool) {
-        //Reloads tabledata when view reappears at the top of the stack
         tableView.reloadData()
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

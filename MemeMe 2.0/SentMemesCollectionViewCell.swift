@@ -16,7 +16,7 @@ class SentMemesCollectionViewCell: UICollectionViewCell {
     
     //MARK: Outlet Declarations
     @IBOutlet weak var memeCollectionCell: UIImageView! {
-        didSet{
+        didSet{  //didSet function for rounding the delete button view
             deleteButtonView.layer.cornerRadius = deleteButtonView.bounds.width / 2
             deleteButtonView.layer.masksToBounds = true
         }
@@ -24,15 +24,16 @@ class SentMemesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var deleteButtonView: UIVisualEffectView!
     @IBOutlet weak var deleteButton: UIButton!
     
+    //MARK: Variable Declarations
     weak var delegate: SentMemesCollectionViewCellDelegate?
     
     
-    
+    //MARK: Action Functions
     @IBAction func deleteButton(_ sender: Any) {
         delegate?.deleteCell(index: deleteButton.tag)
     }
     
-    //Wiggle Function
+    //MARK: Wiggle Function
     func makeWiggle() {
         let shakeAnim = CABasicAnimation(keyPath: "transform.rotation")
         shakeAnim.duration = 0.05
@@ -47,7 +48,6 @@ class SentMemesCollectionViewCell: UICollectionViewCell {
         shakeAnim.repeatCount = 10000
         shakeAnim.timeOffset = 290 * drand48()
         
-        //Create layer, then add animation to the element's layer
         let layer: CALayer = self.layer
         layer.add(shakeAnim, forKey:"shaking")
     }
